@@ -1,0 +1,47 @@
+<body class="body1">
+  <br/>
+ <div class="container"> 
+<form #userform="ngForm" (ngSubmit)="onSubmit(name.value,pass.value,email.value,mob.value)">
+  <div class="form-group">
+    <label>name:</label>
+    <input type="text"  required #name="ngModel" 
+    [class.is-invalid]="name.invalid && name.touched" class="form-control" name="username" placeholder="name" ngModel>
+   
+    <small [class.d-none]="name.valid || name.untouched">name is required</small>
+  </div>
+  <div class="form-group">
+    <label>Password:</label>
+    <input type="password" required="" name="pass" #pass="ngModel" 
+    [class.is-invalid]="pass.invalid && pass.touched" class="form-control" ngModel placeholder="password">
+    <small [class.d-none]="pass.valid || pass.untouched">password is required</small>
+  </div>
+  <div class="form-group">
+      <label>ConformPassword:</label>
+      <input type="password" required=""  name="pass2" #repass="ngModel" class="form-control" match-password="pass1"
+      [class.is-invalid]="repass.invalid && repass.touched" validatetoEqual="pass" ngModel placeholder="password">
+      <small [class.d-none]="repass.valid || repass.untouched ">Password is MisMatch  </small>
+        <!-- <small *ngif="repass.invalid;then x else y">Password is MisMatch</small>
+        <ng-template #x>not matched</ng-template>
+        <ng-template #y>required </ng-template>
+       -->
+      <!-- <small [hidden]="repass.valid">Password is MisMatch</small> -->
+    </div>
+  
+  <div class="form-group">
+      <label>Email-Id:</label>
+      <input type="email" required name="email1" #email="ngModel" class="form-control" 
+      [class.is-invalid]="email.invalid && email.touched" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$" ngModel placeholder="email-Id">
+      <small [class.d-none]="email.valid || email.untouched">email-Id is required</small>
+  </div>
+  <div class="form-group">
+      <label>Mobile:</label>
+      <input type="tel" required name="mobile" #mob="ngModel" class="form-control" 
+      [class.is-invalid]="mob.invalid && mob.touched" maxlength="10" minlength="10" ngModel placeholder="mobile">
+      <small [class.d-none]="mob.valid || mob.untouched">Valid Mobile is required</small>
+  </div>
+  <div id="btn">
+    <button [disabled]="userform.form.invalid" class="button btn btn-primary">Subscribe</button>
+  </div>
+  </form>
+</div>
+</body>

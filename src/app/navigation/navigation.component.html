@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/home">Home</a>
+      </li>
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+          Tours
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="/hill">Group Cruises</a>
+            <a class="dropdown-item" href="/hill">Mountain Tours</a>
+            <a class="dropdown-item" href="/family">Beach Tours</a>
+            <a class="dropdown-item" href="/family">Family Tours</a>
+          </div>
+        </li>
+<!--     
+      <li class="nav-item" *ngIf = "sessionStorage.getItem('key')">
+        <a  href="/home">Logout</a>
+      </li> -->
+      <li *ngIf="isUser">
+          <a (click)="SignOut()">Logout</a>
+       </li>
+       <li><p> &nbsp; &nbsp;</p></li>
+      <li *ngIf="!isUser">
+          <p (click)="Login()">Login</p>
+
+         </li>
+        <li><p> &nbsp; &nbsp;</p></li>
+         <li *ngIf="!isUser">
+            <a (click)="register()">SignUp</a>
+            
+           </li>   
+
+        <!-- <li class="nav-item" *ngIf = "!sessionStorage.getItem('key')">
+            <a class="nav-link" href="/login">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/register">Subscribe</a>
+      </li> -->
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#contact">About-US</a>
+      </li>
+    </ul>
+  </nav>

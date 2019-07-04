@@ -1,0 +1,64 @@
+<app-navigation></app-navigation>
+<div id="demo" class="carousel slide" data-ride="carousel">
+
+		<!-- Indicators -->
+		<ul class="carousel-indicators">
+		  <li data-target="#demo" data-slide-to="0" class="active"></li>
+		  <li data-target="#demo" data-slide-to="1"></li>
+		  <li data-target="#demo" data-slide-to="2"></li>
+		</ul>
+		
+		<!-- The slideshow -->
+		<div class="carousel-inner">
+		  <div class="carousel-item active">
+			<img src="images/img6.jpg" alt="Los Angeles" width="100%" height="500px">
+		  </div>
+		  <div class="carousel-item">
+			<img src="images/img2.jpg" alt="Chicago" width="100%" height="500px">
+		  </div>
+		  <div class="carousel-item">
+			<img src="images/img7.jpg" alt="New York" width="100%" height="500px">
+		  </div>
+		</div>
+		
+		<!-- Left and right controls -->
+		<a class="carousel-control-prev" href="#demo" data-slide="prev">
+		  <span class="carousel-control-prev-icon"></span>
+		</a>
+		<a class="carousel-control-next" href="#demo" data-slide="next">
+		  <span class="carousel-control-next-icon"></span>
+		</a>
+		</div>
+		
+		<!-- <div *ngFor =" let i of det">
+			{{i.title}}
+		</div> -->
+
+	  <div class="container">
+				<br/>
+				<br/>
+				<div *ngFor="let i of det" class="aa">
+					<div  class="flip-card-inner">
+						<div class="flip-card-front">			
+							<img id="img1" src="{{i.src}}" alt="Pineapple">
+								<h2>{{i.title}}</h2>	
+							<p>{{i.description}}
+								<br/> <br/>
+							Max Altitude          :{{i.Altitude}} <br/>
+							Best Season           : {{i.Season}}<br/>
+							</p>
+						</div>	
+					<div class="flip-card-back">
+						<p>price={{i.price}}</p> 
+						<p>duration : {{i.duration}}</p>
+					</div>
+				</div>
+				
+			</div>
+<br/>
+<br/>
+			 
+				<br/>
+				<br/>
+	  </div>
+	
